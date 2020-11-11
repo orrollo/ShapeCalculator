@@ -8,11 +8,15 @@ public class Triangle extends Shape {
     double secondSide;
     double thirdSide;
 
-    public Triangle(double firstSide, double secondSide, double thirdSide){
-        super("треугольник");
+    protected Triangle(String name, double firstSide, double secondSide, double thirdSide) {
+        super(name);
         this.firstSide = firstSide;
         this.secondSide = secondSide;
         this.thirdSide = thirdSide;
+    }
+
+    public Triangle(double firstSide, double secondSide, double thirdSide) {
+        this("Треугольник", firstSide, secondSide, thirdSide);
     }
 
     @Override
