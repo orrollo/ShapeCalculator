@@ -21,6 +21,7 @@ public class Main {
 //        triangles[3] = new RectangularTriangle(3, 4);
         for (Triangle triangle : triangles) {
             System.out.println(triangle);
+            System.out.println();
         }
     }
 }

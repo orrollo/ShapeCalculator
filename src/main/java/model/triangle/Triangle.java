@@ -2,11 +2,28 @@ package model.triangle;
 
 import model.Shape;
 
+import java.util.Objects;
+
 public class Triangle extends Shape {
 
     double firstSide;
     double secondSide;
     double thirdSide;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Double.compare(triangle.firstSide, firstSide) == 0 &&
+                Double.compare(triangle.secondSide, secondSide) == 0 &&
+                Double.compare(triangle.thirdSide, thirdSide) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstSide, secondSide, thirdSide);
+    }
 
     protected Triangle(String name, double firstSide, double secondSide, double thirdSide) {
         super(name);
