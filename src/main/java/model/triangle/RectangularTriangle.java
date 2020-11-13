@@ -12,7 +12,7 @@ public class RectangularTriangle extends Triangle {
     }
 
     @Override
-    protected void sidesToString(StringBuilder builder) {
+    protected void describeShape(StringBuilder builder) {
         builder.append("\nПервый катет: ").append(firstSide);
         builder.append("\nВторой катет: ").append(secondSide);
         builder.append("\nГипотенуза: ").append(thirdSide);

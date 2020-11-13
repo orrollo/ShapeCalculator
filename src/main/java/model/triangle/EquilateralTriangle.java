@@ -16,7 +16,7 @@ public class EquilateralTriangle extends Triangle {
     }
 
     @Override
-    protected void sidesToString(StringBuilder builder) {
+    protected void describeShape(StringBuilder builder) {
         builder.append("\nCторона: ").append(firstSide);
     }
 }

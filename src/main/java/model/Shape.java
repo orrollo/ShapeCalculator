@@ -9,9 +9,21 @@ public abstract class Shape {
 
     protected abstract double getPerimeter();
 
-    protected abstract double getSquare();
-
     public String getName() {
         return name;
+    }
+
+    protected abstract void describeShape(StringBuilder builder);
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder(this.getName());
+        describeShape(builder);
+        describeParameters(builder);
+        return builder.toString();
+    }
+
+    protected void describeParameters(StringBuilder builder) {
+        builder.append("\nПериметр: ").append(getPerimeter());
     }
 }

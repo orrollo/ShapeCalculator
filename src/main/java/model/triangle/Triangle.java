@@ -1,10 +1,11 @@
 package model.triangle;
 
+import model.ISquare;
 import model.Shape;
 
 import java.util.Objects;
 
-public class Triangle extends Shape {
+public class Triangle extends Shape implements ISquare {
 
     double firstSide;
     double secondSide;
@@ -42,22 +43,19 @@ public class Triangle extends Shape {
     }
 
     @Override
+    protected void describeParameters(StringBuilder builder) {
+        super.describeParameters(builder);
+        builder.append("\nПлощадь: ").append(getSquare());
+    }
+
+    @Override
     public double getSquare() {
         double halfPerimeter = getPerimeter() / 2;
         return Math.sqrt(halfPerimeter * (halfPerimeter - firstSide) *
                 (halfPerimeter - secondSide) * (halfPerimeter - thirdSide));
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder(this.getName());
-        sidesToString(builder);
-        builder.append("\nПериметр: ").append(getPerimeter());
-        builder.append("\nПлощадь: ").append(getSquare());
-        return builder.toString();
-    }
-
-    protected void sidesToString(StringBuilder builder) {
+    protected void describeShape(StringBuilder builder) {
         builder.append("\nПервая сторона: ").append(firstSide);
         builder.append("\nВторая сторона: ").append(secondSide);
         builder.append("\nТретья сторона: ").append(thirdSide);

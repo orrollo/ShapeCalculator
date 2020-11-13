@@ -17,7 +17,7 @@ public class IsoscelesTriangle extends Triangle {
     }
 
     @Override
-    protected void sidesToString(StringBuilder builder) {
+    protected void describeShape(StringBuilder builder) {
         builder.append("\nБоковая сторона: ").append(firstSide);
         builder.append("\nОснование: ").append(thirdSide);
     }
