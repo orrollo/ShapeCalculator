@@ -6,13 +6,13 @@ public class Trapeze extends Quadrangle implements ISquare {
 
     double height;
 
-    public Trapeze(double firstSide, double secondSide, double thirdSide, double fourthSide) {
-        super("Трапеция", firstSide, secondSide, thirdSide, fourthSide);
+    public Trapeze(double leftSide, double upperBase, double rightSide, double secondBase) {
+        super("Трапеция", leftSide, upperBase, rightSide, secondBase);
 
-        double diff = fourthSide - secondSide;
+        double diff = secondBase - upperBase;
         double x = 2*diff;
-        x = (diff*diff + firstSide * firstSide - thirdSide * thirdSide) / x;
-        x = firstSide * firstSide - x*x;
+        x = (diff*diff + leftSide * leftSide - rightSide * rightSide) / x;
+        x = leftSide * leftSide - x*x;
         height = Math.sqrt(x);
     }
 
